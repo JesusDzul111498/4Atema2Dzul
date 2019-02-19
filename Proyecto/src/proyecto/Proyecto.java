@@ -12,7 +12,7 @@ package proyecto;
 public class Proyecto {
 
     /**
-     * Equipo 
+     * Equipo  Se han agregado
      * Dzul Canul Jesus Geovany
      * Coba Kauil Lis Enrique
      * Kauil Dzib Alexis Elise
