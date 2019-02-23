@@ -22,7 +22,10 @@ public class Proyecto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        vistas abrir = new vistas();
+        abrir.setVisible(true);
         
+ 
     }
     
 }
