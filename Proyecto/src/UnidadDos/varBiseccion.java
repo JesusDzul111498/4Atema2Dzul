@@ -4,18 +4,34 @@
  * and open the template in the editor.
  */
 package UnidadDos;
-
+import UnidadDos.MetodoBiseccion.*;
 /**
  *
  * @author cobak
  */
+
+
+
+import UnidadUno.metodoss;
+
 public class varBiseccion extends javax.swing.JFrame {
 
     /**
      * Creates new form varBiseccion
      */
+    
+    //se crean las variables
+    
+    private double limiteInferior,limiteSuperior,Tolerancia;
+    private String Resultado,ResultadoDos;
+    private double result,resultDos;
+    
+    MetodoBiseccion cal =new MetodoBiseccion();
+    
+    
     public varBiseccion() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,18 +48,15 @@ public class varBiseccion extends javax.swing.JFrame {
         ExtremoInferior = new javax.swing.JLabel();
         ExtremoSuperior = new javax.swing.JLabel();
         ExtremoSuperior1 = new javax.swing.JLabel();
-        ExtremoSuperior2 = new javax.swing.JLabel();
-        ExtremoSuperior3 = new javax.swing.JLabel();
-        ExtremoSuperior4 = new javax.swing.JLabel();
-        ExtremoSuperior7 = new javax.swing.JLabel();
-        ExtremoSuperior8 = new javax.swing.JLabel();
-        ExtremoInferiorUno = new javax.swing.JTextField();
-        ExtremoSuperiorUno = new javax.swing.JTextField();
-        Tolerancia = new javax.swing.JTextField();
-        ExponenteUno = new javax.swing.JTextField();
-        ExponenteDos = new javax.swing.JTextField();
-        Comun = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        BotonCalcular = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        varInf = new javax.swing.JTextPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        VarSup = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        varTol = new javax.swing.JTextPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        proto = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,67 +75,21 @@ public class varBiseccion extends javax.swing.JFrame {
         ExtremoSuperior1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         ExtremoSuperior1.setText("Tolerancia: ");
 
-        ExtremoSuperior2.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ExtremoSuperior2.setText("Funcion: ");
-
-        ExtremoSuperior3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ExtremoSuperior3.setText("X");
-
-        ExtremoSuperior4.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ExtremoSuperior4.setText("+");
-
-        ExtremoSuperior7.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ExtremoSuperior7.setText("X");
-
-        ExtremoSuperior8.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        ExtremoSuperior8.setText("+");
-
-        ExtremoInferiorUno.setText("insertar valor");
-        ExtremoInferiorUno.addActionListener(new java.awt.event.ActionListener() {
+        BotonCalcular.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        BotonCalcular.setText("Calcular");
+        BotonCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExtremoInferiorUnoActionPerformed(evt);
+                BotonCalcularActionPerformed(evt);
             }
         });
 
-        ExtremoSuperiorUno.setText("insertar valor");
-        ExtremoSuperiorUno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExtremoSuperiorUnoActionPerformed(evt);
-            }
-        });
+        jScrollPane1.setViewportView(varInf);
 
-        Tolerancia.setText("insertar valor");
-        Tolerancia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ToleranciaActionPerformed(evt);
-            }
-        });
+        jScrollPane2.setViewportView(VarSup);
 
-        ExponenteUno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExponenteUnoActionPerformed(evt);
-            }
-        });
+        jScrollPane3.setViewportView(varTol);
 
-        ExponenteDos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExponenteDosActionPerformed(evt);
-            }
-        });
-
-        Comun.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComunActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        jButton1.setText("Calcular");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jScrollPane4.setViewportView(proto);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,118 +99,72 @@ public class varBiseccion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ExtremoSuperior1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Tolerancia, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(ExtremoInferior)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ExtremoSuperior)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ExtremoSuperior1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ExtremoInferior)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ExtremoInferiorUno, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(ExtremoSuperior)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ExtremoSuperiorUno, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton1)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(ExtremoSuperior2)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addComponent(ExtremoSuperior3)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ExtremoSuperior4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ExtremoSuperior7)
-                                        .addGap(35, 35, 35)
-                                        .addComponent(ExtremoSuperior8)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Comun, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(ExponenteUno, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(ExponenteDos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(BotonCalcular)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(31, 31, 31)
                         .addComponent(ExtremoInferior))
-                    .addComponent(ExtremoInferiorUno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(ExtremoSuperior)
-                    .addComponent(ExtremoSuperiorUno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ExtremoSuperior1)
-                    .addComponent(Tolerancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(ExtremoSuperior2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ExponenteUno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ExponenteDos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ExtremoSuperior7)
-                            .addComponent(ExtremoSuperior8)
-                            .addComponent(Comun, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ExtremoSuperior3)
-                        .addComponent(ExtremoSuperior4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                    .addComponent(ExtremoSuperior1)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(BotonCalcular)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ExtremoInferiorUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExtremoInferiorUnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExtremoInferiorUnoActionPerformed
+    private void BotonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalcularActionPerformed
+        limiteInferior =Double.parseDouble(varInf.getText());// TODO add your handling code here:
+        limiteSuperior=Double.parseDouble(VarSup.getText());
+        Tolerancia = Double.parseDouble(varTol.getText()) ;
+        
+        //variables para contruir la funcion de evaluacion
+        //variables Enteros
+ 
+        resultDos = cal.calcularRaiz(limiteInferior, limiteSuperior, Tolerancia);
+        
+        Resultado = String.valueOf(result);
+        ResultadoDos = String.valueOf(resultDos);
+        
+       proto.setText(ResultadoDos);
 
-    private void ExtremoSuperiorUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExtremoSuperiorUnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExtremoSuperiorUnoActionPerformed
-
-    private void ToleranciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToleranciaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ToleranciaActionPerformed
-
-    private void ExponenteUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExponenteUnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExponenteUnoActionPerformed
-
-    private void ExponenteDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExponenteDosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExponenteDosActionPerformed
-
-    private void ComunActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComunActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComunActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotonCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,6 +192,9 @@ public class varBiseccion extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(varBiseccion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -281,22 +205,19 @@ public class varBiseccion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Comun;
-    private javax.swing.JTextField ExponenteDos;
-    private javax.swing.JTextField ExponenteUno;
+    private javax.swing.JButton BotonCalcular;
     private javax.swing.JLabel ExtremoInferior;
-    private javax.swing.JTextField ExtremoInferiorUno;
     private javax.swing.JLabel ExtremoSuperior;
     private javax.swing.JLabel ExtremoSuperior1;
-    private javax.swing.JLabel ExtremoSuperior2;
-    private javax.swing.JLabel ExtremoSuperior3;
-    private javax.swing.JLabel ExtremoSuperior4;
-    private javax.swing.JLabel ExtremoSuperior7;
-    private javax.swing.JLabel ExtremoSuperior8;
-    private javax.swing.JTextField ExtremoSuperiorUno;
-    private javax.swing.JTextField Tolerancia;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextPane VarSup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextPane proto;
+    private javax.swing.JTextPane varInf;
+    private javax.swing.JTextPane varTol;
     // End of variables declaration//GEN-END:variables
 }

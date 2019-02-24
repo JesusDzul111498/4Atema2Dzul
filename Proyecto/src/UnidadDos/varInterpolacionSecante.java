@@ -16,6 +16,7 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
      */
     public varInterpolacionSecante() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
