@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UnidadDos;
+package UnidadDos.AbsteractTabletModels;
 
 /**
  *
  * @author cobak
  */
-public class Main {
+public class Tabla_AbstractadTabletModel_InterpolacionSecante {
     
 }

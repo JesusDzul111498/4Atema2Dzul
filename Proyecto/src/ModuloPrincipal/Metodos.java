@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ModuloMain;
+package ModuloPrincipal;
 import java.util.*;
-import ModuloMain.ventanaPrincipal;
+import ModuloPrincipal.ventanaPrincipal;
 /**
  *
  * @author Familiadc
