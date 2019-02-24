@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto;
+package UnidadDos;
 
 /**
  *
  * @author Familiadc
  */
-public class vistaMetodoInterpolacion extends javax.swing.JFrame {
+public class vistaMetodoIntervalo extends javax.swing.JFrame {
 
     /**
-     * Creates new form vistaMetodoInterpolacion
+     * Creates new form vistaMetodoIntervalo
      */
-    public vistaMetodoInterpolacion() {
+    public vistaMetodoIntervalo() {
+        setTitle("Métodos de intervalo.");
         initComponents();
-        setTitle("Métodos de interpolación.");
     }
 
     /**
@@ -66,10 +66,7 @@ public class vistaMetodoInterpolacion extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
