@@ -116,12 +116,12 @@ public class vistas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        Tabla_AbstractadTabletModel_MetodoBiseccion ejecutar= new Tabla_AbstractadTabletModel_MetodoBiseccion();
+        varBiseccion ejecutar= new varBiseccion();
         ejecutar.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        Tabla_AbstractadTabletModel_MetodoInterpolacion ejecutar= new Tabla_AbstractadTabletModel_MetodoInterpolacion();
+        EscogerInterpolacion ejecutar= new EscogerInterpolacion();
         ejecutar.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 

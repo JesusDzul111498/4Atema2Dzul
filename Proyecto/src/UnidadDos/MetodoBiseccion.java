@@ -14,8 +14,8 @@ public class MetodoBiseccion {
        /*****
    Miembros datos
    */
-      double a, b, tol, p;
-      int ni;
+      double a, b, tol, p; //extremos y tolerancia
+      int ni;//iteraciones
    
    /******
    Constructor
