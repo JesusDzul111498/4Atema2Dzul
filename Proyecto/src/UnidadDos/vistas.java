@@ -5,6 +5,11 @@
  */
 package UnidadDos;
 
+import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoIntervalo;
+import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoAproximaciones;
+import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoInterpolacion;
+import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoBiseccion;
+
 /**
  *
  * @author Familiadc
@@ -100,7 +105,7 @@ public class vistas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-       vistaMetodoIntervalo ejecutar= new vistaMetodoIntervalo();
+       Tabla_AbstractadTabletModel_MetodoIntervalo ejecutar= new Tabla_AbstractadTabletModel_MetodoIntervalo();
        ejecutar.setVisible(true);
        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -111,17 +116,17 @@ public class vistas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        vistaMetodoBiseccion ejecutar= new vistaMetodoBiseccion();
+        Tabla_AbstractadTabletModel_MetodoBiseccion ejecutar= new Tabla_AbstractadTabletModel_MetodoBiseccion();
         ejecutar.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        vistaMetodoInterpolacion ejecutar= new vistaMetodoInterpolacion();
+        Tabla_AbstractadTabletModel_MetodoInterpolacion ejecutar= new Tabla_AbstractadTabletModel_MetodoInterpolacion();
         ejecutar.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        vistaMetodoAproximaciones ejecutar= new vistaMetodoAproximaciones();
+        Tabla_AbstractadTabletModel_MetodoAproximaciones ejecutar= new Tabla_AbstractadTabletModel_MetodoAproximaciones();
         ejecutar.setVisible(true); // TODO add your handling code here:// TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
