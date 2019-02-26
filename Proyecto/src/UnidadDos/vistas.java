@@ -9,6 +9,7 @@ import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoInterva
 import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoAproximaciones;
 import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoInterpolacion;
 import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoBiseccion;
+import java.awt.Color;
 
 /**
  *
@@ -36,10 +37,12 @@ public class vistas extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("METODOS NUMERICOS U2");
         setBackground(new java.awt.Color(153, 204, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setFont(new java.awt.Font("Serif", 0, 10)); // NOI18N
@@ -49,57 +52,101 @@ public class vistas extends javax.swing.JFrame {
         jButton5.setBackground(java.awt.Color.lightGray);
         jButton5.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jButton5.setText("Métodos de intervalo.");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton5MouseExited(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton5);
-        jButton5.setBounds(30, 20, 240, 50);
+        jButton5.setBounds(60, 20, 240, 50);
 
         jButton6.setBackground(java.awt.Color.lightGray);
         jButton6.setFont(new java.awt.Font("Arial Black", 0, 10)); // NOI18N
         jButton6.setText("SALIR");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton6MouseExited(evt);
+            }
+        });
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(100, 260, 90, 40);
+        jButton6.setBounds(140, 260, 90, 40);
 
         jButton7.setBackground(java.awt.Color.lightGray);
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jButton7.setText("Métodos de bisección.");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bt7(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton7MouseExited(evt);
+            }
+        });
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton7);
-        jButton7.setBounds(30, 80, 240, 50);
-
-        jButton8.setBackground(java.awt.Color.lightGray);
-        jButton8.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jButton8.setText("Métodos de Interpolacion");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton8);
-        jButton8.setBounds(30, 200, 240, 50);
+        jButton7.setBounds(60, 80, 240, 50);
 
         jButton9.setBackground(java.awt.Color.lightGray);
         jButton9.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jButton9.setText("Métodos de Aproximaciones.");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                eventos9(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton9MouseExited(evt);
+            }
+        });
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton9);
-        jButton9.setBounds(30, 140, 260, 50);
+        jButton9.setBounds(60, 140, 240, 50);
+
+        jButton8.setBackground(java.awt.Color.lightGray);
+        jButton8.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jButton8.setText("Métodos de Interpolacion");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton8MouseExited(evt);
+            }
+        });
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8);
+        jButton8.setBounds(60, 200, 240, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UnidadDos/fm.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 390, 320);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,11 +177,76 @@ public class vistas extends javax.swing.JFrame {
         ejecutar.setVisible(true); // TODO add your handling code here:// TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        // TODO add your handling code here:
+        jButton5.setBackground(Color.BLACK);
+        jButton5.setForeground(Color.WHITE);
+      
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+        // TODO add your handling code here:
+        jButton5.setBackground(Color.LIGHT_GRAY);
+        jButton5.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton5MouseExited
+
+    private void bt7(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt7
+        // TODO add your handling code here:
+        jButton7.setBackground(Color.BLACK);
+        jButton7.setForeground(Color.WHITE);
+        
+    }//GEN-LAST:event_bt7
+
+    private void eventos9(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventos9
+        // TODO add your handling code here:
+       
+        jButton9.setBackground(Color.BLACK);
+        jButton9.setForeground(Color.WHITE);
+     
+    }//GEN-LAST:event_eventos9
+
+    private void jButton8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseEntered
+        // TODO add your handling code here:
+        jButton8.setBackground(Color.BLACK);
+        jButton8.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jButton8MouseEntered
+
+    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
+        // TODO add your handling code here:
+        jButton6.setBackground(Color.BLACK);
+        jButton6.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jButton6MouseEntered
+
+    private void jButton7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseExited
+        // TODO add your handling code here:
+        jButton7.setBackground(Color.LIGHT_GRAY);
+        jButton7.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton7MouseExited
+
+    private void jButton9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseExited
+        // TODO add your handling code here:
+        jButton9.setBackground(Color.LIGHT_GRAY);
+        jButton9.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton9MouseExited
+
+    private void jButton8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseExited
+        // TODO add your handling code here:
+        jButton8.setBackground(Color.LIGHT_GRAY);
+        jButton8.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton8MouseExited
+
+    private void jButton6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseExited
+        // TODO add your handling code here:
+        jButton6.setBackground(Color.LIGHT_GRAY);
+        jButton6.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton6MouseExited
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
