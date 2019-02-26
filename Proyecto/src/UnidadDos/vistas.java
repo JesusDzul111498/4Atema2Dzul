@@ -5,6 +5,7 @@
  */
 package UnidadDos;
 
+import ModuloPrincipal.ventanaPrincipal;
 import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoIntervalo;
 import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoAproximaciones;
 import UnidadDos.AbsteractTabletModels.Tabla_AbstractadTabletModel_MetodoInterpolacion;
@@ -22,6 +23,7 @@ public class vistas extends javax.swing.JFrame {
      */
     public vistas() {
         initComponents();
+        
         this.setLocationRelativeTo(null);
     }
 
@@ -39,7 +41,8 @@ public class vistas extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jButton11 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("METODOS NUMERICOS U2");
@@ -85,7 +88,7 @@ public class vistas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6);
-        jButton6.setBounds(140, 260, 90, 40);
+        jButton6.setBounds(210, 260, 90, 40);
 
         jButton7.setBackground(java.awt.Color.lightGray);
         jButton7.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
@@ -144,9 +147,28 @@ public class vistas extends javax.swing.JFrame {
         getContentPane().add(jButton8);
         jButton8.setBounds(60, 200, 240, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UnidadDos/fm.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 390, 320);
+        jButton11.setBackground(java.awt.Color.lightGray);
+        jButton11.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        jButton11.setText("Menu Principal");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton11MouseExited(evt);
+            }
+        });
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton11);
+        jButton11.setBounds(60, 260, 150, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UnidadDos/fm.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 380, 310);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,6 +176,7 @@ public class vistas extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        Tabla_AbstractadTabletModel_MetodoIntervalo ejecutar= new Tabla_AbstractadTabletModel_MetodoIntervalo();
        ejecutar.setVisible(true);
+       setVisible(false);
        // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -165,16 +188,19 @@ public class vistas extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         varBiseccion ejecutar= new varBiseccion();
         ejecutar.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         EscogerInterpolacion ejecutar= new EscogerInterpolacion();
         ejecutar.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         Tabla_AbstractadTabletModel_MetodoAproximaciones ejecutar= new Tabla_AbstractadTabletModel_MetodoAproximaciones();
-        ejecutar.setVisible(true); // TODO add your handling code here:// TODO add your handling code here:
+        ejecutar.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
@@ -241,12 +267,32 @@ public class vistas extends javax.swing.JFrame {
         jButton6.setForeground(Color.BLACK);
     }//GEN-LAST:event_jButton6MouseExited
 
+    private void jButton11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseEntered
+         jButton11.setBackground(Color.BLACK);
+        jButton11.setForeground(Color.WHITE);
+    }//GEN-LAST:event_jButton11MouseEntered
+
+    private void jButton11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseExited
+        // TODO add your handling code here:
+        jButton11.setBackground(Color.LIGHT_GRAY);
+        jButton11.setForeground(Color.BLACK);
+    }//GEN-LAST:event_jButton11MouseExited
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        
+        ventanaPrincipal abrir = new ventanaPrincipal();
+        abrir.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

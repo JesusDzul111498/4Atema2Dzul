@@ -45,6 +45,8 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
         ExponenteDos = new javax.swing.JTextField();
         Comun = new javax.swing.JTextField();
         botonCalcular = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +127,22 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jToggleButton1.setText("Menu");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton2.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        jToggleButton2.setText("Ventana anterior");
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,7 +168,10 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(botonCalcular)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jToggleButton2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botonCalcular))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(ExtremoSuperior2)
@@ -164,7 +185,9 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
                                         .addGap(35, 35, 35)
                                         .addComponent(ExtremoSuperior8)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Comun, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Comun, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jToggleButton1))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -211,7 +234,10 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
                         .addComponent(ExtremoSuperior3)
                         .addComponent(ExtremoSuperior4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonCalcular)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCalcular)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jToggleButton2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -246,6 +272,19 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonCalcularActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        vistas abrir = new vistas();
+        abrir.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+
+        EscogerInterpolacion abrir = new EscogerInterpolacion();
+        abrir.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Comun;
@@ -265,5 +304,7 @@ public class varInterpolacionSecante extends javax.swing.JFrame {
     private javax.swing.JButton botonCalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     // End of variables declaration//GEN-END:variables
 }
